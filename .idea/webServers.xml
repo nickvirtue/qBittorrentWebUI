@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="34e463a0-1c1f-4863-8b92-31988604de7a" name="hive" url="http://hive">
+        <fileTransfer anonymous="true" rootFolder="/qBittorrent/config/ui/DarkLight" host="hive" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

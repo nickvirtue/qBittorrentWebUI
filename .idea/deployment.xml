@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="hive" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="hive">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/private" local="$PROJECT_DIR$/private" web="/" />
+            <mapping deploy="/public" local="$PROJECT_DIR$/public" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/public/icons" />
+            <excludedPath local="true" path="$PROJECT_DIR$/public/images" />
+            <excludedPath local="true" path="$PROJECT_DIR$/private/icons" />
+            <excludedPath local="true" path="$PROJECT_DIR$/private/images" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
