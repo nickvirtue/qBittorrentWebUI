@@ -5,7 +5,7 @@
 	Theme: Default
 
 	Copyright:
-		Copyright (c) 2007-2009 Greg Houston, <http://greghoustondesign.com/>.
+		Copyright (c) 2007-2009 Greg Houston, <http://greghoustondesign#4f5d68
 
 	License:
 		MIT-style license.
@@ -25,55 +25,54 @@
 /* Div Background Properties Mixin */
 :root {
   --invert-image: invert(0%);
+  --tab-color: #9fbedd;
+  --tab-color-selected: #2385cf;
   --tab-image: url(../images/tabs.png); }
 
 body.light-theme, body.light-theme > *, body.light-theme + * {
   --invert-image: invert(0%);
+  --tab-color: #9fbedd;
+  --tab-color-selected: #2385cf;
   --tab-image: url(../images/tabs.png); }
 
 @media (prefers-color-scheme: dark) {
   body, body > *, body + * {
     --invert-image: invert(100%);
+    --tab-color: #2a3640;
     --tab-image: url(../images/tabs_dark.png); } }
 
 body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   --invert-image: invert(100%);
+  --tab-color: #2a3640;
   --tab-image: url(../images/tabs_dark.png); }
 
 .toolbarTabs {
   padding: 0 5px 2px 2px;
-  background: var(--tab-image) repeat-x;
-  background-position: left -70px;
   overflow: visible; }
 
 .tab-menu {
-  padding-top: 1px;
+  padding: 1px 0 0;
   list-style: none;
   margin: 0;
-  padding: 0;
   line-height: 16px;
   font-size: 11px; }
 
 .tab-menu li {
   float: left;
-  margin: 0 0 5px 0;
+  margin: 3px 0 5px 8px;
   cursor: pointer;
-  background: var(--tab-image) repeat-x;
-  background-position: left -35px; }
+  background-color: var(--tab-color);
+  border-radius: 3px; }
   .tab-menu li.selected {
-    background: var(--tab-image) repeat-x;
+    background: var(--tab-color-selected) repeat-x;
     background-position: left 0; }
     .tab-menu li.selected a {
-      color: var(--font-tint);
-      font-weight: bold;
-      background: var(--tab-image) repeat-x;
-      background-position: right 0; }
+      color: var(--font-tint-selected);
+      font-weight: bold; }
   .tab-menu li a {
     display: block;
     margin-left: 8px;
     padding: 6px 15px 5px 9px;
     text-align: center;
     font-weight: normal;
-    color: var(--font-tint);
-    background: var(--tab-image) repeat-x;
-    background-position: right -35px; }
+    color: var(--font-tint); }

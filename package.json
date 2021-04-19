@@ -13,5 +13,8 @@
     "eslint": "*",
     "eslint-plugin-html": "*",
     "js-beautify": "*"
+  },
+  "dependencies": {
+    "node-sass": "^5.0.0"
   }
 }

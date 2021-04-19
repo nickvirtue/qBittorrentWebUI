@@ -33,6 +33,7 @@ a img, :link img, :visited img {
   --char-spacing: 0em;
   --font-color: #000;
   --font-tint: #555;
+  --font-tint-selected: #555;
   --font-size: 16px;
   --line-height: 18px;
   --font-wgt: 400;
@@ -47,6 +48,7 @@ body.light-theme, body.light-theme > *, body.light-theme + * {
   --char-spacing: 0em;
   --font-color: #000;
   --font-tint: #555;
+  --font-tint-selected: #555;
   --font-size: 16px;
   --line-height: 18px;
   --font-wgt: 400;
@@ -62,6 +64,7 @@ body.light-theme, body.light-theme > *, body.light-theme + * {
     --char-spacing: 0.01em;
     --font-color: #fff;
     --font-tint: #b0c7d9;
+    --font-tint-selected: #19232d;
     --font-wgt: 500;
     --text-hover: #799db8;
     --style-border-lte: #1f2d3b;
@@ -74,6 +77,7 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   --char-spacing: 0.01em;
   --font-color: #fff;
   --font-tint: #b0c7d9;
+  --font-tint-selected: #19232d;
   --font-wgt: 500;
   --text-hover: #799db8;
   --style-border-lte: #1f2d3b;
@@ -93,6 +97,7 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   --font-dtint: #555;
   --selected-text: #fff;
   --row-alt: #eee;
+  --row-head: #aaa;
   --row-select: #354158;
   --row-hover: #ee6600;
   --divder-border: #ebebeb;
@@ -112,6 +117,7 @@ body.light-theme, body.light-theme > *, body.light-theme + * {
   --font-dtint: #555;
   --selected-text: #fff;
   --row-alt: #eee;
+  --row-head: #aaa;
   --row-select: #354158;
   --row-hover: #ee6600;
   --divder-border: #ebebeb;
@@ -130,6 +136,7 @@ body.light-theme, body.light-theme > *, body.light-theme + * {
     --font-dtint: #bbb;
     --selected-text: #000;
     --row-alt: #1f2d3b;
+    --row-head: #31475d;
     --row-select: #94BBD8;
     --row-hover: #799db8;
     --divder-border: #363636;
@@ -147,6 +154,7 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   --font-dtint: #bbb;
   --selected-text: #000;
   --row-alt: #1f2d3b;
+  --row-head: #31475d;
   --row-select: #94BBD8;
   --row-hover: #799db8;
   --divder-border: #363636;
@@ -728,12 +736,12 @@ pre {
   padding: 10px;
   border: 1px solid #d1d7dc; }
 
-/* Dividers */
+/* Dividers/gaps */
 hr {
   background-color: #ddd;
   color: #ccc;
   height: 1px;
-  border: 0px; }
+  border: 0; }
 
 .vcenter {
   vertical-align: middle; }
@@ -806,7 +814,6 @@ a.propButton {
     .contextMenu li ul {
       padding: 0;
       border: 1px solid #999;
-      padding: 0;
       background: var(--bg-color);
       list-style-type: none;
       position: absolute;
@@ -823,7 +830,7 @@ a.propButton {
       -ms-interpolation-mode: bicubic; }
     .contextMenu li input[type=checkbox] {
       position: relative;
-      top: 0px; }
+      top: 0; }
   .contextMenu li a.arrow-right, .contextMenu li a:hover.arrow-right {
     background-image: url(../images/arrow-right.gif);
     background-repeat: no-repeat;
@@ -947,7 +954,7 @@ label.tristate {
   display: block;
   float: left;
   height: 13px;
-  margin: .15em 8px 5px 0px;
+  margin: .15em 8px 5px 0;
   overflow: hidden;
   text-indent: -999em;
   width: 13px; }
@@ -985,7 +992,7 @@ div.formRow {
   background: var(--bg-color-tint);
   font-weight: bold;
   text-transform: uppercase;
-  padding: 0px 0px 4px 5px;
+  padding: 0 0 4px 5px;
   display: block;
   overflow: hidden;
   white-space: nowrap;
@@ -996,12 +1003,12 @@ div.formRow {
     width: 16px;
     height: 16px;
     margin-bottom: -4px;
-    padding: 0px 5px;
+    padding: 0 5px;
     position: relative;
-    top: 0px;
+    top: 0;
     left: 2px;
     cursor: pointer;
-    margin-top: 0px;
+    margin-top: 0;
     background-image: var(--goDownIcon);
     background-size: contain;
     background-repeat: no-repeat;
@@ -1009,7 +1016,7 @@ div.formRow {
     .filterTitle div.rotate {
       transform: rotate(270deg);
       top: -6px;
-      left: 0px; }
+      left: 0; }
 
 ul.filterList {
   margin: 0 0 0 16px;
@@ -1047,7 +1054,7 @@ td.generalLabel {
   top: 2px;
   cursor: pointer;
   margin-bottom: -3px;
-  margin-top: 0px;
+  margin-top: 0;
   padding-right: 4px;
   background-image: var(--goDownIcon);
   background-size: contain;
@@ -1062,6 +1069,9 @@ td.generalLabel {
 .unselectable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none; }
 
 #prop_general {
@@ -1082,22 +1092,23 @@ td.generalLabel {
   height: 20px; }
   .select-watched-folder-editable select {
     position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
+    top: 0;
+    bottom: 0;
+    left: 0;
     border: none;
     width: 160px;
     margin: 0; }
   .select-watched-folder-editable input {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 140px;
     padding: 1px;
     border: none; }
   .select-watched-folder-editable .ctxt_icon {
     background-origin: content-box;
-    padding-left: 170px; }
+    padding-left: 170px;
+    cursor: pointer; }
   .select-watched-folder-editable select:focus, .select-watched-folder-editable .select-editable input:focus {
     outline: none; }
 
@@ -1176,7 +1187,7 @@ td.statusBarSeparator {
 #desktopNavbar div {
   height: 16px;
   width: 16px;
-  margin: 0px 5px -3px -18px;
+  margin: 0 5px -3px -18px;
   top: 1px;
   position: relative;
   background-size: contain;
@@ -1197,7 +1208,7 @@ td.statusBarSeparator {
 
 /*Filter List Icon Divs Sizing and Styles */
 #statusFilterList a > div {
-  padding: 0px 4px;
+  padding: 0 4px;
   margin-bottom: -1px;
   top: 3px;
   width: 16px;
@@ -1210,9 +1221,9 @@ td.statusBarSeparator {
 
 /*Folder Icon Divs Sizing and Styles */
 #tagFilterList div, #categoryFilterList div {
-  padding: 0px 4px;
+  padding: 0 4px;
   top: 1px;
-  margin: 2px 0px;
+  margin: 2px 0;
   width: 16px;
   height: 16px;
   position: relative;
@@ -1222,9 +1233,9 @@ td.statusBarSeparator {
   display: inline-block; }
 
 #trackerFilterList div {
-  padding: 0px 4px;
+  padding: 0 4px;
   top: 4px;
-  margin: 0px;
+  margin: 0;
   width: 16px;
   height: 16px;
   position: relative;
@@ -1339,7 +1350,7 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   outline: 0;
   z-index: 2;
   position: relative;
-  top: 0px;
+  top: 0;
   cursor: pointer;
   display: inline-block; }
 
@@ -1374,6 +1385,7 @@ select {
   border: 1px solid var(--border-col);
   border-radius: 4px;
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   box-sizing: border-box;
   padding: 3px 22px 3px 8px;
@@ -1429,7 +1441,7 @@ body {
   scrollbar-color: var(--thumbBG) var(--scrollbarBG); }
 
 ::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
-  border-radius: 0px;
+  border-radius: 0;
   padding: 8px;
   background-color: var(--scrollbarBG); }
 

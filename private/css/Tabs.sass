@@ -5,7 +5,7 @@
 	Theme: Default
 
 	Copyright:
-		Copyright (c) 2007-2009 Greg Houston, <http://greghoustondesign.com/>.
+		Copyright (c) 2007-2009 Greg Houston, <http://greghoustondesign#4f5d68
 
 	License:
 		MIT-style license.
@@ -22,7 +22,8 @@
 
 @import mixins
 
-$tabsTheme: (invert-image 'invert(0%)' 'invert(100%)', tab-image 'url(../images/tabs.png)' 'url(../images/tabs_dark.png)')
+$tabsTheme: (invert-image 'invert(0%)' 'invert(100%)', tab-color #9fbedd #2a3640, tab-color-selected #2385cf, tab-image 'url(../images/tabs.png)' 'url(../images/tabs_dark.png)')
+//$tabsTheme: (invert-image 'invert(0%)' 'invert(100%)', tab-image 'url(../images/tabs.png)' 'url(../images/tabs_dark.png)')
 
 +themeGenerate($tabsTheme, "--")
 
@@ -30,36 +31,33 @@ $tabsTheme: (invert-image 'invert(0%)' 'invert(100%)', tab-image 'url(../images/
 
 .toolbarTabs
 	padding: 0 5px 2px 2px
-	background: var(--tab-image) repeat-x
-	background-position: left -70px
+	//background: var(--bg-color-tint)
+	//background-position: left -70px
 	overflow: visible
 
 
 .tab-menu
-	padding-top: 1px
+	padding: 1px 0 0
 	list-style: none
 	margin: 0
-	padding: 0
 	line-height: 16px
 	font-size: 11px
 
 
 .tab-menu li
 	float: left
-	margin: 0 0 5px 0
+	margin: 3px 0 5px 8px
 	cursor: pointer
-	background: var(--tab-image) repeat-x
-	background-position: left -35px
+	background-color: var(--tab-color)
+	border-radius: 3px
 
 	&.selected
-		background: var(--tab-image) repeat-x
+		background: var(--tab-color-selected) repeat-x
 		background-position: left 0
 		a
-			color: var(--font-tint)
+			color: var(--font-tint-selected)
 			font-weight: bold
-			background: var(--tab-image) repeat-x
-			background-position: right 0
-
+			//background-color: var(--tab-color-selected)
 	a
 		display: block
 		margin-left: 8px
@@ -67,5 +65,4 @@ $tabsTheme: (invert-image 'invert(0%)' 'invert(100%)', tab-image 'url(../images/
 		text-align: center
 		font-weight: normal
 		color: var(--font-tint)
-		background: var(--tab-image) repeat-x
-		background-position: right -35px
+		//background-color: var(--tab-color)

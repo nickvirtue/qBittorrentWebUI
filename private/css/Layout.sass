@@ -59,8 +59,8 @@ body
 #desktopTitlebar 
 	padding: 7px 8px 6px 8px
 	height: 32px
-	background: url(../images/logo.gif) no-repeat
-	background-position: left 0
+	background: url(../images/logo.gif) no-repeat left 0
+
 	h1.applicationTitle
 		display: none
 		margin: 0
@@ -101,7 +101,7 @@ body
 #desktopNavbar
 	background: var(--bg-color-tint)
 	/*height: 30px*/
-	margin: 0 0px
+	margin: 0 0
 	overflow: hidden  /* Remove this line if you want the menu to be backward compatible with Firefox 2 */
 	/* Fixes by Chris */
 	/*background-color: #ccc*/
@@ -254,7 +254,7 @@ li.divider
 
 .panel-header
 	position: relative
-	background: #f1f1f1 url(../images/bg-panel-header.gif) repeat-x
+	//background: #f1f1f1 url(../images/bg-panel-header.gif) repeat-x
 	height: 30px
 	overflow: hidden
 	border-bottom: 1px solid var(--style-border-lte)
@@ -271,8 +271,7 @@ li.divider
 	padding-top: 2px
 
 .panel-headerContent.tabs
-	background: var(--tab-image) repeat-x
-	background-position: left -68px
+	background: var(--bg-color-tint)
 
 .panel-collapse
 	background: var(--collapseIcon) left top no-repeat
@@ -300,7 +299,7 @@ li.divider
 
 .horizontalHandle .handleIcon
 	margin: 0 auto
-	height: 4px
+	height: 6px
 	line-height: 1px
 	font-size: 1px
 	overflow: hidden
@@ -310,10 +309,10 @@ li.divider
 	filter: var(--invert-image)
 	min-height: 10px
 	float: left
-	width: 4px
+	width: 6px
 	overflow: hidden
-	background: #c3c3c3 url(../images/handle-icon.gif) center center no-repeat
-	border: 1px solid var(--border-col)
+	background: white url(../images/handle-icon.gif) center center no-repeat
+	border: 1px solid white
 	border-top: 0
 	border-bottom: 0
 
@@ -327,7 +326,7 @@ li.divider
 	overflow: hidden
 	text-align: right
 
-.panel-header-toolbox
+//.panel-header-toolbox
 
 div.toolbox.divider  /* Have to specify div here for IE6's sake */
 	background: url(../images/toolbox-divider.gif) repeat-y
